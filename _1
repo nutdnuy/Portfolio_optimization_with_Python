@@ -1,0 +1,7 @@
+missing_colnames=[]
+for i in bigmacro.drop(['Date','Regime'],axis=1):
+observations=len(bigmacro)-bigmacro[i].count()
+if (observations>10):
+print(i+':'+str(observations))
+missing_colnames.append(i)
+bigmacro=bigmacro.drop(labels=missing_colnames, axis=1)
